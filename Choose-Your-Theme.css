@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Choose Your Theme
-@namespace      https://github.com/Tsyron/YouTube-Theme/
-@version        1.0.0
+@namespace      github.com/Tsyron/YouTube-Theme
+@version        1.0.1
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -57,7 +57,6 @@
         ocl=rgba(0, 0, 0, .2)
         ocd=rgba(255, 255, 255, .2)
         
-
     /* Light Theme */
     html,
     html[light],
@@ -71,11 +70,11 @@
         --yt-spec-outline: ocl;
         --yt-live-chat-text-input-field-inactive-underline-color: ocl;
         --yt-spec-text-primary: cf1l;
-        --yt-spec-text-primary-inverse: cf1d
+        --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-secondary: cf1l;
         --yt-spec-text-disabled: cf1l;
-        --yt-spec-call-to-action: cll;
-        --yt-spec-call-to-action-inverse: cld;
+        --yt-spec-call-to-action: c1l;
+        --yt-spec-call-to-action-inverse: c1l;
         --yt-spec-suggested-action: var(--yt-spec-button-chip-background-hover);
         --ytd-searchbox-background: c2l;
         --ytd-searchbox-legacy-button-color: c2l;
@@ -100,6 +99,7 @@
         --yt-spec-error-indicator: ca1;
         --yt-spec-themed-blue: ca1;
         --yt-spec-themed-green: ca1;
+        --yt-spec-static-brand-white: var(--yt-spec-base-background);
         --yt-spec-ad-indicator: ca1;
         --yt-spec-themed-overlay-background: c3l;
         --yt-spec-static-brand-red: ca1;
@@ -115,9 +115,17 @@
         --yt-spec-filled-button-focus-outline: ocl;
         --yt-spec-filled-button-text: c2l;
         --yt-spec-selected-nav-text: ca1;
+        --yt-live-chat-background-color: c2l;
+        --yt-live-chat-action-panel-background-color: c2l; 
         --yt-emoji-picker-category-background-color: c3l;
         --yt-emoji-picker-search-background-color: c3l;
-        --ytd-icon-color: cf1l; }
+        --yt-live-chat-banner-gradient-scrim: linear-gradient(c3l, transparent);
+        --yt-live-chat-vem-background-color: var(--yt-spec-badge-chip-background); 
+        --yt-live-chat-secondary-text-color: cf1l;
+        --yt-live-chat-tertiary-text-color: cf1l;
+        --yt-live-chat-enabled-send-button-color: cf1l;
+        --ytd-icon-color: cf1l;
+        --yt-spec-static-overlay-background-heavy: cf1l; }
 
     /* Dark Theme */
     html[dark],
@@ -137,9 +145,11 @@
         --yt-spec-outline: ocd;
         --yt-live-chat-text-input-field-inactive-underline-color: ocd;
         --yt-spec-text-primary: cf1d;
+        --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-secondary: cf1d;
+        --yt-spec-text-disabled: cf1d;
         --yt-spec-call-to-action: cld;
-        --yt-spec-call-to-action-inverse: cll;
+        --yt-spec-call-to-action-inverse: c1l;
         --yt-spec-suggested-action: var(--yt-spec-additive-background);
         --ytd-searchbox-background: c2d;
         --ytd-searchbox-legacy-button-color: c2d;
@@ -153,7 +163,7 @@
         --yt-spec-icon-active-other: cf1d;
         --yt-spec-icon-inactive: cf1d;
         --yt-spec-brand-icon-active: cf1d;
-        --yt-spec-brand-icon-inactive: cf1d;
+        --yt-spec-brand-icon-inactive: cf1d;        
         --yt-spec-icon-disabled: c4l;
         --yt-spec-touch-response: cf1l;
         --yt-spec-touch-response-inverse: cf1d;
@@ -164,6 +174,7 @@
         --yt-spec-error-indicator: cad;
         --yt-spec-themed-blue: cad;
         --yt-spec-themed-green: cad;
+        --yt-spec-static-brand-white: cf1d;
         --yt-spec-ad-indicator: cad;
         --yt-spec-themed-overlay-background: c3d;
         --yt-spec-static-brand-red: cad;
@@ -172,6 +183,9 @@
         --yt-spec-brand-background-solid: c1d;
         --yt-spec-brand-background-primary: c3d;
         --yt-spec-general-background-a: c3d;
+        --yt-spec-general-background-b: c2d;
+        --yt-spec-general-background-c: c2d;
+        --yt-spec-error-background: c1l;
         --yt-spec-10-percent-layer: ocd;
         --yt-spec-filled-button-focus-outline: ocd;
         --yt-spec-filled-button-text: c2d;
@@ -182,8 +196,11 @@
         --yt-emoji-picker-search-background-color: c3d;
         --yt-live-chat-banner-gradient-scrim: linear-gradient(c3d, transparent);
         --yt-live-chat-vem-background-color: var(--yt-spec-badge-chip-background);
-        --ytd-icon-color: cf1d; }
-
+        --yt-live-chat-secondary-text-color: cf1d;
+        --yt-live-chat-tertiary-text-color: cf1d;
+        --yt-live-chat-enabled-send-button-color: cf1d;
+        --ytd-icon-color: cf1d;
+        --yt-spec-static-overlay-background-heavy: var(--yt-spec-base-background); }
     html,
     html[light],
     [light],
@@ -234,11 +251,11 @@
 
         /* Subscribe Button */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-            color: var(--Color1Light);
+            color: var(c1l);
             background-color: ca1; }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
-            color: var(--Color1Light);
+            color: var(c1l);
             background-color: clhl; }
 
         /* Video Player: Play Button */
@@ -256,6 +273,7 @@
         .ytp-scrubber-button,
         .html5-scrubber-button:hover,
         .ytp-scrubber-button:hover,
+        
         #progress {
             background-color: ca1; }
 
@@ -287,9 +305,9 @@
         .ytp-chrome-controls .ytp-button[aria-pressed]::after {
             background-color: ca1; }
             
-        /* Watched Underline */
-        #progress {
-            background-color: cal; }
+        /* Skeleton Video Player */
+        #movie_player {
+            background-color: #0002 !important; }
 
         /* Advertisement*/
         .ytp-flyout-cta .ytp-flyout-cta-action-button.ytp-flyout-cta-action-button-rounded {
@@ -317,8 +335,16 @@
             background-image: c3l;
             color: cf1l;
             border: transparent;
-            border-radius: 7px; } }
-
+            border-radius: 7px; } 
+            
+        /* Homepage Skeleton*/
+        #home-container-skeleton, #guide-skeleton, #home-chips, #masthead, #player, #watch-page-skeleton {
+		    background-color: c1l !important; }
+        
+	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
+	    .skeleton-bg-color {
+            background-color: #0002 !important; } }
+   
     html[dark],
     [dark],
     html:not(.style-scope)[dark],
@@ -373,11 +399,11 @@
 
         /* Subscribe Button */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-            color: var(--Color1Dark);
+            color: var(c1d);
             background-color: cad; }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
-            color: var(--Color1Dark);
+            color: var(c1d);
             background-color: cahd; }
 
         /* Video Player: Play Button */
@@ -425,6 +451,10 @@
         .ytp-chrome-controls .ytp-button[aria-pressed]::after {
             background-color: cad; }
             
+        /* Skeleton Video Player */
+        #movie_player {
+            background-color: #fff2 !important; }
+            
         /* Watched Underline */
         #progress {
             background-color: cad; }
@@ -455,8 +485,17 @@
             background-image: c3d;
             color: cf1d;
             border: transparent;
-            border-radius: 7px; } }
+            border-radius: 7px; } 
             
+        /* Homepage Skeleton*/
+        #home-container-skeleton, #guide-skeleton, #home-chips, #masthead, #player, #watch-page-skeleton {
+		    background-color: c1d !important; }
+        
+	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
+	    .skeleton-bg-color {
+            background-color: #fff2 !important; }
+        }
+        
     /* Channel name, views, time */
     #metadata.ytd-video-meta-block {
         opacity: 0.7; }
