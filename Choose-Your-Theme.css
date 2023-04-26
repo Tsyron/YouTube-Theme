@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Choose Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.0.3
+@version        1.0.4
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -27,7 +27,7 @@
 @var            checkbox checkbox-ambient "Wide Screen Ambient Mode" 0
 
 ==/UserStyle== */
-@-moz-document domain("youtube.com") {
+@-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"), domain("music.youtube.com") {
 
         /* Light Theme */
         c1l=color-light
@@ -135,7 +135,8 @@
         --yt-spec-static-overlay-background-heavy: cf1l;
         --paper-toggle-button-unchecked-button-color: c1l;
         --paper-toggle-button-checked-button-color: cll;
-         }
+        --yt-spec-static-overlay-touch-response: cf1l;
+        --yt-spec-static-overlay-text-primary: cf1d; }
 
     /* Dark Theme */
     html[dark],
@@ -214,7 +215,8 @@
         --yt-spec-static-overlay-background-heavy: var(--yt-spec-base-background);
         --paper-toggle-button-unchecked-button-color: cf1d;
         --paper-toggle-button-checked-button-color: cld;
-         }
+        --yt-spec-static-overlay-touch-response: cf1d;
+        --yt-spec-static-overlay-text-primary: cf1d; }
     
     html,
     html[light],
@@ -230,7 +232,7 @@
         #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2) {
             fill: var(--yt-spec-base-background); }
             
-             /* Searchbar: Colours */
+        /* Searchbar: Colours */
         div.sbsb_a, .sbfl_b {
             background-color: c2l; }
     
@@ -263,6 +265,9 @@
         /* Notification */
         #icon > #button > .ytd-notification-topbar-button-renderer > div > .yt-spec-icon-badge-shape__badge {
             background-color: cal; }
+            
+        .yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__icon {
+            color: cf1l; }
 
         /* Subscribe Button */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
@@ -434,6 +439,9 @@
         /* Notification */
         #icon > #button > .ytd-notification-topbar-button-renderer > div > .yt-spec-icon-badge-shape__badge {
             background-color: cad; }
+            
+        .yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__icon {
+            color: cf1d; }
 
         /* Subscribe Button */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
