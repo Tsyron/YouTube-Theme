@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Choose Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.0
+@version        1.1.1
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -41,9 +41,11 @@
         
         cll=color-linked-light
         clhl=darken(cll, 10%)
+        cll1=rgba(cll, 0.1)
         
         cf1l=color-font-light
         cf2l=rgba(cf1l, 0.7)
+        cf3l=rgba(cf1l, 0.5)
         
         /* Dark Theme */
         c1d=color-dark
@@ -51,13 +53,15 @@
         c3d=lighten(c1d, 10%)
         c4d=lighten(c1d, 20%)
         c5d=rgba(c1d, 0.7)
-        c6d=rgba(c1d, 0.3)
+        c6d=rgba(c1d, 0.9)
+        c7d=rgba(c1d, 0.3)
         
         cad=color-accent-dark
         cahd=darken(cad, 10%)
         
         cld=color-linked-dark
         clhd=lighten(cld, 10%)
+        cld1=rgba(cld, 0.1)
         
         cf1d=color-font-dark
         cf2d=rgba(cf1d, 0.7)
@@ -109,7 +113,7 @@
         --yt-spec-static-overlay-text-primary: cf1d;
         --yt-spec-static-overlay-touch-response: cf1l;
         --yt-spec-suggested-action: var(--yt-spec-button-chip-background-hover);
-        --yt-spec-text-disabled: cf1l;
+        --yt-spec-text-disabled: cf3l;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: cf1l;
         --yt-spec-text-secondary: cf2l;
@@ -159,47 +163,41 @@
         
         /* YouTube Studio */
         /* thanks to: Lesboy */
-        /*--ytcp-analytics-overview: cal !important;
-        --ytcp-badge-blue: cal !important;
+        --ytcp-analytics-overview: cal !important;
+        --ytcp-badge-blue: cll1 !important;
         --ytcp-brand-background-solid: c2l !important;
-        --ytcp-call-to-action-focused-background: #a895ff12 !important;
-        --ytcp-call-to-action-raised-background: #9f99d5 !important;
-        --ytcp-call-to-action-raised-disabled-background: #9f99d566 !important;
-        --ytcp-call-to-action-raised-disabled: #1c1b22 !important;
-        --ytcp-call-to-action-raised-focused-background: #00000033; 
-        --ytcp-call-to-action-raised-ripple: #00000033;
-        --ytcp-call-to-action-raised: #1c1b22 !important;
-        --ytcp-call-to-action-ripple: #38364b47 !important;
-        --ytcp-call-to-action-secondary-focused-background: #ffffff33;
-        --ytcp-call-to-action-secondary-ripple: #ffffff33;
-        --ytcp-call-to-action: #9f99d5 !important; 
-        --ytcp-container-border-color: #e2e0f330 !important;
-        --ytcp-container-border: 2px solid #2b2a33 !important;
-        --ytcp-container-hovered-border-color: #2b2a33 !important;
-        --ytcp-error-red: #9f99d5 !important;
-        --ytcp-focus: #9f99d5 !important;
-        --ytcp-general-background-a: #1c1b22 !important;
-        --ytcp-general-background-b: #2b2a33 !important;
-        --ytcp-general-background-c: #373641 !important;
-        --ytcp-hover-item: #6d6b7e29 !important;
-        --ytcp-icon-disabled: #2b2a33 !important;
-        --ytcp-icon-inactive: #d7d4f1 !important;
-        --ytcp-line-divider-solid: #2b2a33 !important;
-        --ytcp-line-divider: #2b2a33 !important;
-        --ytcp-menu-background: #2b2a33 !important;
-        --ytcp-selected-item: #373641 !important;
-        --ytcp-static-background-inverse: #232229;
-        --ytcp-static-brand-red: #9f99d5;
-        --ytcp-static-overlay-text-disabled: #ffffff4d;
-        --ytcp-static-overlay-text-primary: #ebe9fb !important;
-        --ytcp-static-overlay-text-secondary: #ffffffb3;
-        --ytcp-static-overlay-tooltip-background: #232229 !important;
-        --ytcp-text-disabled: #e0ddf96e !important;
-        --ytcp-text-primary: #ebe9fb !important;
-        --ytcp-text-secondary: #e2e0f3bf !important;
-        --ytcp-themed-blue: #9f99d5 !important; 
-        --ytcp-themed-green: #7af3a7 !important;
-        --ytcp-themed-red: #9f99d5 !important;*/ }
+        --ytcp-call-to-action-raised-background: cll !important;
+        --ytcp-call-to-action-raised-disabled-background: cf3l !important;
+        --ytcp-call-to-action-raised-disabled: c1l !important;
+        --ytcp-call-to-action-raised: c1l !important;
+        --ytcp-call-to-action: cll !important; 
+        --ytcp-container-border-color: ocl !important;
+        --ytcp-container-border: 2px solid ocl !important;
+        --ytcp-container-hovered-border-color: ocl !important;
+        --ytcp-error-red: cal !important;
+        --ytcp-focus: cll !important;
+        --ytcp-general-background-a: c1l !important;
+        --ytcp-general-background-b: c3l !important;
+        --ytcp-general-background-c: c2l !important;
+        --ytcp-hover-item: var(--yt-spec-badge-chip-background) !important;
+        --ytcp-icon-disabled: cf3l !important;
+        --ytcp-icon-inactive: cf1l !important;
+        --ytcp-line-divider-solid: ocl !important;
+        --ytcp-line-divider: ocl !important;
+        --ytcp-menu-background: c3l !important;
+        --ytcp-selected-item: var(--yt-spec-10-percent-layer) !important;
+        --ytcp-static-background-inverse: c1l;
+        --ytcp-static-brand-red: cal;
+        --ytcp-static-overlay-text-primary: cf1l !important;
+        --ytcp-static-overlay-text-secondary: cf2l;
+        --ytcp-static-overlay-tooltip-background: c3l !important;
+        --ytcp-text-disabled: cf3l !important;
+        --ytcp-text-primary: cf1l !important;
+        --ytcp-text-secondary: cf2l !important;
+        --ytcp-themed-blue: cll !important; 
+        --ytcp-themed-green: cal !important;
+        --ytcp-themed-red: cal !important;
+        }
 
     /* Dark Theme */
     html[dark],
@@ -247,7 +245,7 @@
         --yt-spec-static-overlay-text-primary: cf1d;
         --yt-spec-static-overlay-touch-response: cf1d;
         --yt-spec-suggested-action: var(--yt-spec-additive-background);
-        --yt-spec-text-disabled: cf1d;
+        --yt-spec-text-disabled: cf3d;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: cf1d;
         --yt-spec-text-secondary: cf2d;
@@ -300,7 +298,7 @@
         /* YouTube Studio */
         /* thanks to: Lesboy */
         --ytcp-analytics-overview: cad !important;
-        --ytcp-badge-blue: cad !important;
+        --ytcp-badge-blue: cld1 !important;
         --ytcp-brand-background-solid: c2d !important;
         --ytcp-call-to-action-raised-background: cld !important;
         --ytcp-call-to-action-raised-disabled-background: cf3d !important;
@@ -704,11 +702,11 @@
             
     /* Video Player: Pop-up Menu */
     .ytp-popup   {
-        background: c5d;
+        background: c6d;
         border-radius: 15px; }
         
     .iv-branding .branding-context-container-outer, .iv-branding .branding-context-container-inner {
-        background: c5d;
+        background: c6d;
         border-radius: 15px; }
         
     .ytp-sb-unsubscribe {
@@ -722,7 +720,7 @@
         background-image: linear-gradient(c1d, transparent 30%); }
         
     .iv-drawer {
-        background: c6d; }
+        background: c7d; }
             
     /* Button */
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
