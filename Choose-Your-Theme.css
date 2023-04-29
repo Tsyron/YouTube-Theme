@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Choose Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.2
+@version        1.1.3
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -393,6 +393,19 @@ domain("studio.youtube.com") {
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
             color: c1l;
             background-color: cal; }
+            
+        /* Like Button */
+        yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(2) > path:nth-child(1),
+    yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(4) > path:nth-child(1) {
+            stroke: cf1l !important; }
+
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(1),
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(1) {
+            fill: cf1l !important; }
+
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(2),
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(2) {
+            stroke: cf1l !important; }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover {
             color: c1l;
@@ -587,6 +600,19 @@ domain("studio.youtube.com") {
             color: c1d;
             background-color: cahd; }
             
+        /* Like Button */
+        yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(2) > path:nth-child(1),
+    yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(4) > path:nth-child(1) {
+            stroke: cf1d !important; }
+
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(1),
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(1) {
+            fill: cf1d !important; }
+
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(2),
+       yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(2) {
+            stroke: cf1d !important; }
+
         /* Video player: subscribe */
         .ytp-sb-subscribe, a.ytp-sb-subscribe {
              background: cad; }
