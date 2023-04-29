@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Choose Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.1
+@version        1.1.2
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -29,12 +29,14 @@
 @var            text text-ambient2 "Ambient Mode Height (px)" inherit
 
 ==/UserStyle== */
-@-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"), domain("music.youtube.com"), domain("studio.youtube.com") {
+@-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"), domain("music.youtube.com"),
+domain("studio.youtube.com") {
 
         /* Light Theme */
         c1l=color-light
         c2l=lighten(c1l, 10%)
         c3l=lighten(c1l, 20%)
+        c4l=darken(c1l, 2.75%)
         
         cal=color-accent-light
         cahl=darken(cal, 10%)
@@ -55,6 +57,10 @@
         c5d=rgba(c1d, 0.7)
         c6d=rgba(c1d, 0.9)
         c7d=rgba(c1d, 0.3)
+        c8d=lighten(c1d, 7.25%)
+        c9d=lighten(c1d, 5%)
+        c10d=darken(c1d, 80%)
+        c11d=lighten(c1d, 1.25%)
         
         cad=color-accent-dark
         cahd=darken(cad, 10%)
@@ -71,14 +77,13 @@
         ocl=rgba(cf1l, .2)
         ocd=rgba(cf1d, .2)
         
-    
     /* Light Theme */
     html,
     html[light],
     [light],
     html[system-icons],
     html:not(.style-scope) {
-        --yt-spec-10-percent-layer: var(--yt-spec-badge-chip-background);
+        --yt-spec-10-percent-layer: ocl;
         --yt-spec-ad-indicator: cal;
         --yt-spec-base-background: c1l;
         --yt-spec-brand-background-primary: c3l;
@@ -129,7 +134,7 @@
         --ytd-searchbox-legacy-border-color: ocl;
         --ytd-searchbox-legacy-border-shadow-color: transparent;
         --ytd-searchbox-legacy-button-border-color: ocl;
-        --ytd-searchbox-legacy-button-color: c2l;
+        --ytd-searchbox-legacy-button-color: c4l;
         --ytd-searchbox-legacy-button-focus-color: vocl;
         --ytd-searchbox-legacy-button-hover-border-color: ocl;
         --ytd-searchbox-legacy-button-icon-color: cf1d;
@@ -146,11 +151,11 @@
         --yt-emoji-picker-category-background-color: c3l;
         --yt-emoji-picker-search-background-color: c3l;
         
+        --paper-input-container-focus-color: c3l;
+        --paper-toast-background-color: c3l !important;
         --paper-toggle-button-checked-button-color: cll;
         --paper-toggle-button-unchecked-button-color: c1l;
-        --paper-input-container-focus-color: c3l;
         --paper-tooltip-background: cf1l !important;
-        --paper-toast-background-color: c3l !important;
         
         --yt-compact-link-icon-color: c1fl !important;
         --yt-deprecated-white-opacity-lighten-1: cf2l;
@@ -210,7 +215,7 @@
     html[darker-dark-theme] [dark],
     html[system-icons][dark],
     html:not(.style-scope)[dark] {
-        --yt-spec-10-percent-layer: var(--yt-spec-badge-chip-background);
+        --yt-spec-10-percent-layer: ocl;
         --yt-spec-ad-indicator: cad;
         --yt-spec-base-background: c1d;
         --yt-spec-brand-background-primary: c3d;
@@ -226,9 +231,9 @@
         --yt-spec-error-indicator: cad;
         --yt-spec-filled-button-focus-outline: ocd;
         --yt-spec-filled-button-text: c2d;
-        --yt-spec-general-background-a: c3d;
-        --yt-spec-general-background-b: c2d;
-        --yt-spec-general-background-c: c2d;
+        --yt-spec-general-background-a: c2d;
+        --yt-spec-general-background-b: c1d;
+        --yt-spec-general-background-c: c10d;
         --yt-spec-icon-active-other: cf1d;
         --yt-spec-icon-disabled: c4l;
         --yt-spec-icon-inactive: cf1d;
@@ -256,12 +261,12 @@
         --yt-spec-touch-response: cf1l;
         --yt-spec-wordmark-text: cf1d;
         
-        --ytd-searchbox-background: c1d;
+        --ytd-searchbox-background: c11d;
         --ytd-searchbox-border-color: ocd;
         --ytd-searchbox-legacy-border-color: ocd;
         --ytd-searchbox-legacy-border-shadow-color: transparent;
         --ytd-searchbox-legacy-button-border-color: ocd;
-        --ytd-searchbox-legacy-button-color: c2d;
+        --ytd-searchbox-legacy-button-color: c8d;
         --ytd-searchbox-legacy-button-focus-color: ocd;
         --ytd-searchbox-legacy-button-hover-border-color: ocd;
         --ytd-searchbox-legacy-button-icon-color: cf1l;
@@ -278,11 +283,11 @@
         --yt-emoji-picker-category-background-color: c3d;
         --yt-emoji-picker-search-background-color: c3d;
         
+        --paper-input-container-focus-color: c3d;
+        --paper-toast-background-color: c3d !important; 
         --paper-toggle-button-checked-button-color: cld;
         --paper-toggle-button-unchecked-button-color: cf1d;
-        --paper-input-container-focus-color: c3d;
         --paper-tooltip-background: c4d !important;
-        --paper-toast-background-color: c3d !important; 
         
         --disabled-text-color: cf2d !important;
 
@@ -385,11 +390,11 @@
             color: cf1l; }
 
         /* Subscribe Button */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
             color: c1l;
             background-color: cal; }
 
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover {
             color: c1l;
             background-color: cahl; }
             
@@ -435,19 +440,25 @@
             color: cal; }
 
         /* Video Player: Option toggle */
-        .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox,
         .ytp-autonav-toggle-button[aria-checked="true"] {
             background: cal;
-            height: 14px; }
+            height: 11px;
+            width: 33px; }
 
         .ytp-autonav-toggle-button[aria-checked="true"] {
-            background: cal; }
+            background-color: cal; }
+            
+        .ytp-autonav-toggle-button[aria-checked="true"]::after {
+            top: -1px; }
+            
+        .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+            background-color: cal; }
 
         /* Video Player: Subtitles Toggle */
         .ytp-chrome-controls .ytp-button[aria-pressed]::after {
             background-color: cal; }
             
-        /* Video Player: I */
+        /* Video Player: Info in Corner*/
         .iv-card {
             background-color: c1l; }
             
@@ -493,7 +504,7 @@
             border-radius: 7px; } 
             
         /* Homepage Skeleton*/
-        #home-container-skeleton, #guide-skeleton, #home-chips, #player, #movie_player, #watch-page-skeleton, #background {
+        #home-container-skeleton, #guide-skeleton, #home-chips, #player, #movie_player, #watch-page-skeleton, ytd-masthead.shell {
 		    background-color: c1l !important; }
         
 	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
@@ -507,8 +518,12 @@
              
         /* Tooltip*/
         #tooltip.tp-yt-paper-tooltip {
-            color: c1l; } }
-   
+            color: c1l; } 
+        
+        /* Shorts: Sound */
+        .yt-core-attributed-string--link-inherit-color {
+            color: cll !important; } }
+    
     html[dark],
     [dark],
     html:not(.style-scope)[dark] {
@@ -564,7 +579,7 @@
             color: cf1d; }
 
         /* Subscribe Button */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
             color: c1d;
             background-color: cad; }
 
@@ -612,19 +627,25 @@
             color: cad; }
 
         /* Video Player: Option toggle */
-        .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox,
         .ytp-autonav-toggle-button[aria-checked="true"] {
             background: cad;
-            height: 14px; }
+            height: 11px;
+            width: 33px; }
 
         .ytp-autonav-toggle-button[aria-checked="true"] {
-            background: cad; }
+            background-color: cad; }
+            
+        .ytp-autonav-toggle-button[aria-checked="true"]::after {
+            top: -1px; }
+            
+        .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+            background-color: cad; }
 
         /* Video Player: Subtitles Toggle */
         .ytp-chrome-controls .ytp-button[aria-pressed]::after {
             background-color: cad; }
             
-        /* Video Player: I */
+        /* Video Player: Info in Corner*/
         .iv-card {
             background-color: c1d; }
             
@@ -678,7 +699,7 @@
             filter: invert(1); }
             
         /* Homepage Skeleton*/
-        #home-container-skeleton, #guide-skeleton, #home-chips, #player, #movie_player, #watch-page-skeleton, #background {
+        #home-container-skeleton, #guide-skeleton, #home-chips, #player, #movie_player, #watch-page-skeleton, ytd-masthead.shell {
 		    background-color: c1d !important; }
         
 	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
@@ -692,7 +713,11 @@
              
         /* Tooltip*/
         #tooltip.tp-yt-paper-tooltip {
-            color: cf1d; } }
+            color: cf1d; }
+        
+        /* Shorts: Sound */
+        .yt-core-attributed-string--link-inherit-color {
+            color: cld !important; } }
     
     /* Tooltip Redesign */
     #tooltip.tp-yt-paper-tooltip, ytcp-paper-tooltip-placeholder[type=label] #tooltip.ytcp-paper-tooltip-placeholder {
@@ -714,14 +739,14 @@
         
     /* Video Player: gradient */
     .ytp-gradient-bottom, .ytp-big-mode .ytp-gradient-bottom {
-        background-image: linear-gradient(transparent 30%, c1d); }
+        background-image: linear-gradient(transparent, c5d); }
             
     .ytp-gradient-top, .ytp-big-mode .ytp-gradient-top {
-        background-image: linear-gradient(c1d, transparent 30%); }
+        background-image: linear-gradient(c5d, transparent); }
         
     .iv-drawer {
         background: c7d; }
-            
+        
     /* Button */
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
         background-color: var(--yt-spec-call-to-action-hover); }
@@ -742,7 +767,7 @@
 
     /* Ambient Wide Screen */
     /* Thanks to: sonitaaaaa */
-        #cinematics.ytd-watch-flexy {
+        #cinematics.ytd-watch-flexy[true] {
             width: text-ambient1;
             height: text-ambient2;
             transform: scale(1.2, 1);
