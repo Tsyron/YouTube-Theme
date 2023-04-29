@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           YouTube - Choose Your Theme
+@name           YouTube - Choose Your Theme Thumbnail
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.3
+@version        1.0.0
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -23,10 +23,6 @@
 @var            color color-font-dark "--- Font" #f1f1f1
 
 @var            checkbox checkbox-animations "Animations" 0
-
-@var            text text-ambient1 "Ambient Mode Width (px)" inherit
-
-@var            text text-ambient2 "Ambient Mode Height (px)" inherit
 
 ==/UserStyle== */
 @-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"), domain("music.youtube.com"),
