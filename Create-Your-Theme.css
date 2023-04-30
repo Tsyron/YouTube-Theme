@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.5
+@version        1.1.6
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -138,7 +138,8 @@ domain("studio.youtube.com") {
         --ytd-searchbox-legacy-button-color: c4l;
         --ytd-searchbox-legacy-button-focus-color: ocl;
         --ytd-searchbox-legacy-button-hover-border-color: ocl;
-        --ytd-searchbox-legacy-button-icon-color: cf1d;
+        --ytd-searchbox-legacy-button-icon-color: cf1l;
+        --ytd-searchbox-text-color: cf1l;
         
         --yt-live-chat-author-chip-owner-background-color: cal;
         --yt-live-chat-author-chip-owner-text-color: c1l;
@@ -278,6 +279,7 @@ domain("studio.youtube.com") {
         --ytd-searchbox-legacy-button-focus-color: ocd;
         --ytd-searchbox-legacy-button-hover-border-color: ocd;
         --ytd-searchbox-legacy-button-icon-color: cf1d;
+        --ytd-searchbox-text-color: cf1d;
         
         --yt-live-chat-action-panel-background-color: c1d;
         --yt-live-chat-panel-pages-border-color: ocd;
@@ -372,7 +374,7 @@ domain("studio.youtube.com") {
         div.sbsb_a, .sbfl_b {
             background-color: c2l; }
     
-        .sbsb_c.gsfs.sbsb_d:hover {
+        .sbsb_c.gsfs.sbsb_d:hover, .sbsb_d {
             background-color: c3l; }
     
         div.sbfl_b:hover, div.sbfl_b:active  {
@@ -476,7 +478,7 @@ domain("studio.youtube.com") {
             background-color: cal; }
             
         .ytp-autonav-toggle-button[aria-checked="true"]::after {
-            top: -1px; }
+            top: -2px; }
             
         .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
             background-color: cal; }
@@ -510,8 +512,8 @@ domain("studio.youtube.com") {
             background-color: cal; }
             
         /* Live Chat Border */
-        ytd-live-chat-frame {
-            border: 1px solid ocl; }
+        /*ytd-live-chat-frame {
+            border: 1px solid ocl; }*/
             
         /* Live Chat Arrow Icon Colour */
         yt-icon-button.yt-live-chat-item-list-renderer {
@@ -538,7 +540,7 @@ domain("studio.youtube.com") {
         #home-container-skeleton, #guide-skeleton, #home-chips, #player, #movie_player, #watch-page-skeleton, ytd-masthead.shell {
 		    background-color: c1l !important; }
         
-	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
+        #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
 	    .skeleton-bg-color {
             background-color: #0002 !important; }
         
@@ -572,7 +574,7 @@ domain("studio.youtube.com") {
         div.sbsb_a, .sbfl_b {
             background-color: c2d; }
     
-        .sbsb_c.gsfs.sbsb_d:hover {
+        .sbsb_c.gsfs.sbsb_d:hover, .sbsb_d {
             background-color: c3d; }
     
         div.sbfl_b:hover, div.sbfl_b:active  {
@@ -675,15 +677,18 @@ domain("studio.youtube.com") {
 
         /* Video Player: Option toggle */
         .ytp-autonav-toggle-button[aria-checked="true"] {
-            background: cad;
+            background: cad; }
+            
+        .ytp-autonav-toggle-button[aria-checked="true"], .ytp-autonav-toggle-button[aria-checked="false"] {
             height: 11px;
-            width: 33px; }
+            width: 33px;
+            text-align: right; }
 
         .ytp-autonav-toggle-button[aria-checked="true"] {
             background-color: cad; }
             
-        .ytp-autonav-toggle-button[aria-checked="true"]::after {
-            top: -1px; }
+        .ytp-autonav-toggle-button[aria-checked="true"]::after, .ytp-autonav-toggle-button[aria-checked="false"]::after {
+            top: -2px; }
             
         .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
             background-color: cad; }
@@ -727,8 +732,8 @@ domain("studio.youtube.com") {
             color: cf1d; }
 
         /* Live Chat Border */
-        ytd-live-chat-frame  {
-            border: 1px solid ocd; }
+        /*ytd-live-chat-frame  {
+            border: 1px solid ocd; }*/
             
         /* Virtual Keyboard */
         .vk-box {
