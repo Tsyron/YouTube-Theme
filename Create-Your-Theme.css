@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/YouTube-Theme
-@version        1.1.6
+@version        1.1.7
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -11,9 +11,13 @@
 
 @var            color color-accent-light "--- Accent" #f00
 
-@var            color color-linked-light "--- Linked" #3ea6ff
+@var            color color-linked-light "--- Linked" #065fd4
 
 @var            color color-font-light "--- Font" #0f0f0f
+
+@var            color olor-blue-light "--- Blue" #065fd4
+
+@var            color color-green-light "--- Green" #2ba640
 
 @var            color color-dark "Dark Mode" #0f0f0f
 
@@ -23,11 +27,11 @@
 
 @var            color color-font-dark "--- Font" #f1f1f1
 
+@var            color color-blue-dark "--- Blue" #3ea6ff
+
+@var            color color-green-dark "--- Green" #2ba640
+
 @var            checkbox checkbox-animations "Animations" 0
-
-@var            text text-ambient1 "Ambient Mode Width (px)" inherit
-
-@var            text text-ambient2 "Ambient Mode Height (px)" inherit
 
 ==/UserStyle== */
 @-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"), domain("music.youtube.com"),
@@ -38,6 +42,7 @@ domain("studio.youtube.com") {
         c2l=lighten(c1l, 10%)
         c3l=lighten(c1l, 20%)
         c4l=darken(c1l, 2.75%)
+        c5l=rgba(c1l, 0.3)
         
         cal=color-accent-light
         cahl=darken(cal, 10%)
@@ -49,6 +54,11 @@ domain("studio.youtube.com") {
         cf1l=color-font-light
         cf2l=rgba(cf1l, 0.7)
         cf3l=rgba(cf1l, 0.5)
+        cf4l=rgba(cf1l, 0.133)
+        cf5l=rgba(cf1l, 0.8)
+        
+        gl=color-green-light
+        bl=color-blue-light
         
         /* Dark Theme */
         c1d=color-dark
@@ -62,6 +72,8 @@ domain("studio.youtube.com") {
         c9d=lighten(c1d, 5%)
         c10d=darken(c1d, 80%)
         c11d=lighten(c1d, 1.25%)
+        c12d=rgba(c1d, 0.8)
+        c13d=rgba(c1d, 0.5)
         
         cad=color-accent-dark
         cahd=darken(cad, 10%)
@@ -73,6 +85,11 @@ domain("studio.youtube.com") {
         cf1d=color-font-dark
         cf2d=rgba(cf1d, 0.7)
         cf3d=rgba(cf1d, 0.5)
+        cf4d=rgba(cf1d, 0.133)
+        cf5d=rgba(cf1d, 0.8)
+        
+        gd=color-green-dark
+        bd=color-blue-dark
         
         /* Outline */
         ocl=rgba(cf1l, .2)
@@ -115,7 +132,7 @@ domain("studio.youtube.com") {
         --yt-spec-static-brand-red: cal;
         --yt-spec-static-brand-white: var(--yt-spec-base-background);
         --yt-spec-static-overlay-background-brand: cal;
-        --yt-spec-static-overlay-background-heavy: cf1l;
+        --yt-spec-static-overlay-background-heavy: cf5l;
         --yt-spec-static-overlay-text-primary: cf1d;
         --yt-spec-static-overlay-touch-response: cf1l;
         --yt-spec-suggested-action: var(--yt-spec-button-chip-background-hover);
@@ -123,8 +140,8 @@ domain("studio.youtube.com") {
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: cf1l;
         --yt-spec-text-secondary: cf2l;
-        --yt-spec-themed-blue: cal;
-        --yt-spec-themed-green: cal;
+        --yt-spec-themed-blue: bl;
+        --yt-spec-themed-green: gl;
         --yt-spec-themed-overlay-background: c3l;
         --yt-spec-touch-response-inverse: cf1l;
         --yt-spec-touch-response: cf1d;
@@ -208,10 +225,9 @@ domain("studio.youtube.com") {
         --ytcp-text-disabled: cf3l !important;
         --ytcp-text-primary: cf1l !important;
         --ytcp-text-secondary: cf2l !important;
-        --ytcp-themed-blue: cll !important; 
-        --ytcp-themed-green: green !important;
-        --ytcp-themed-red: cal !important;
-        }
+        --ytcp-themed-blue: bl !important; 
+        --ytcp-themed-green: gl !important;
+        --ytcp-themed-red: cal !important; }
 
     /* Dark Theme */
     html[dark],
@@ -234,7 +250,7 @@ domain("studio.youtube.com") {
         --yt-spec-brand-icon-inactive: cf1d;        
         --yt-spec-brand-link-text: cad;
         --yt-spec-call-to-action-hover: clhd;
-        --yt-spec-call-to-action-inverse: c1l;
+        --yt-spec-call-to-action-inverse: c1d;
         --yt-spec-call-to-action: cld;
         --yt-spec-error-background: c1l;
         --yt-spec-error-indicator: cad;
@@ -255,7 +271,7 @@ domain("studio.youtube.com") {
         --yt-spec-static-brand-red: cad;
         --yt-spec-static-brand-white: cf1d;
         --yt-spec-static-overlay-background-brand: cad;
-        --yt-spec-static-overlay-background-heavy: var(--yt-spec-base-background);
+        --yt-spec-static-overlay-background-heavy: c12d;
         --yt-spec-static-overlay-text-primary: cf1d;
         --yt-spec-static-overlay-touch-response: cf1d;
         --yt-spec-suggested-action: var(--yt-spec-additive-background);
@@ -263,8 +279,8 @@ domain("studio.youtube.com") {
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: cf1d;
         --yt-spec-text-secondary: cf2d;
-        --yt-spec-themed-blue: cad;
-        --yt-spec-themed-green: cad;
+        --yt-spec-themed-blue: bd;
+        --yt-spec-themed-green: gd;
         --yt-spec-themed-overlay-background: c3d;
         --yt-spec-touch-response-inverse: cf1d;
         --yt-spec-touch-response: cf1l;
@@ -351,8 +367,8 @@ domain("studio.youtube.com") {
         --ytcp-text-disabled: cf3d !important;
         --ytcp-text-primary: cf1d !important;
         --ytcp-text-secondary: cf2d !important;
-        --ytcp-themed-blue: cld !important; 
-        --ytcp-themed-green: green !important;
+        --ytcp-themed-blue: bd !important; 
+        --ytcp-themed-green: gd !important;
         --ytcp-themed-red: cad !important; }
     
     html,
@@ -448,7 +464,8 @@ domain("studio.youtube.com") {
         .html5-scrubber-button,
         .ytp-scrubber-button,
         .html5-scrubber-button:hover,
-        .ytp-scrubber-button:hover,
+        .ytp-scrubber-button:hover {
+            background-color: cal; }
         
         #progress {
             color: cal; }
@@ -470,18 +487,17 @@ domain("studio.youtube.com") {
 
         /* Video Player: Option toggle */
         .ytp-autonav-toggle-button[aria-checked="true"] {
-            background: cal;
+            background: cal; }
+            
+        .ytp-autonav-toggle-button[aria-checked="true"], .ytp-autonav-toggle-button[aria-checked="false"] {
             height: 11px;
             width: 33px; }
-
-        .ytp-autonav-toggle-button[aria-checked="true"] {
-            background-color: cal; }
             
-        .ytp-autonav-toggle-button[aria-checked="true"]::after {
+        .ytp-autonav-toggle-button[aria-checked="true"]::after, .ytp-autonav-toggle-button[aria-checked="false"]::after {
             top: -2px; }
             
         .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
-            background-color: cal; }
+            background: cal; }
 
         /* Video Player: Subtitles Toggle */
         .ytp-chrome-controls .ytp-button[aria-pressed]::after {
@@ -511,10 +527,6 @@ domain("studio.youtube.com") {
         .ytp-ad-persistent-progress-bar {
             background-color: cal; }
             
-        /* Live Chat Border */
-        /*ytd-live-chat-frame {
-            border: 1px solid ocl; }*/
-            
         /* Live Chat Arrow Icon Colour */
         yt-icon-button.yt-live-chat-item-list-renderer {
             background-color: cal !important;
@@ -542,7 +554,7 @@ domain("studio.youtube.com") {
         
         #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
 	    .skeleton-bg-color {
-            background-color: #0002 !important; }
+            background-color: cf4l !important; }
         
         /* Callout */ 
         #callout, #divot, #divot.ytcp-feature-discovery-callout {
@@ -555,7 +567,19 @@ domain("studio.youtube.com") {
         
         /* Shorts: Sound */
         .yt-core-attributed-string--link-inherit-color {
-            color: cll !important; } }
+            color: cll !important; }
+        
+        /* Icons Hover Thumbnail */
+        .ytd-thumbnail-overlay-toggle-button-renderer {
+            fill: c1l;
+            box-shadow: none; }
+        
+        /* Links Social Media */
+        #link-list-container.ytd-channel-about-metadata-renderer a.yt-simple-endpoint.ytd-channel-about-metadata-renderer {
+            color: cll; }
+                
+        #primary-links, #secondary-links {
+            background-color: cf3l; } }
     
     html[dark],
     [dark],
@@ -681,11 +705,7 @@ domain("studio.youtube.com") {
             
         .ytp-autonav-toggle-button[aria-checked="true"], .ytp-autonav-toggle-button[aria-checked="false"] {
             height: 11px;
-            width: 33px;
-            text-align: right; }
-
-        .ytp-autonav-toggle-button[aria-checked="true"] {
-            background-color: cad; }
+            width: 33px; }
             
         .ytp-autonav-toggle-button[aria-checked="true"]::after, .ytp-autonav-toggle-button[aria-checked="false"]::after {
             top: -2px; }
@@ -721,19 +741,14 @@ domain("studio.youtube.com") {
         .ytp-ad-persistent-progress-bar {
             background-color: cad; }
             
-            /* Toggle Icon */
+        /* Toggle Icon */
         #toggleBar {
-            background: rgba(255,255,255,0.3);
-        }
+            background: rgba(255,255,255,0.3); }
 
         /* Live Chat Arrow Icon Colour */
         yt-icon-button.yt-live-chat-item-list-renderer {
             background-color: cad !important;
             color: cf1d; }
-
-        /* Live Chat Border */
-        /*ytd-live-chat-frame  {
-            border: 1px solid ocd; }*/
             
         /* Virtual Keyboard */
         .vk-box {
@@ -760,7 +775,7 @@ domain("studio.youtube.com") {
         
 	    #home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon,
 	    .skeleton-bg-color {
-            background-color: #fff2 !important; }
+            background-color: cf4d !important; }
             
         /* Callout */ 
         #callout, #divot, #divot.ytcp-feature-discovery-callout {
@@ -773,7 +788,22 @@ domain("studio.youtube.com") {
         
         /* Shorts: Sound */
         .yt-core-attributed-string--link-inherit-color {
-            color: cld !important; } }
+            color: cld !important; }
+        
+        /* Links Social Media */
+        #link-list-container.ytd-channel-about-metadata-renderer a.yt-simple-endpoint.ytd-channel-about-metadata-renderer {
+            color: cld; }
+                
+        #primary-links, #secondary-links {
+            background-color: c13d; } }
+     
+    /* Social Media Links */        
+    #primary-links {
+        border-radius: 8px
+        margin-right: 3.75px; }
+                
+   #secondary-links {
+        border-radius: 8px; }
     
     /* Tooltip Redesign */
     #tooltip.tp-yt-paper-tooltip, ytcp-paper-tooltip-placeholder[type=label] #tooltip.ytcp-paper-tooltip-placeholder {
@@ -803,6 +833,12 @@ domain("studio.youtube.com") {
     .iv-drawer {
         background: c7d; }
         
+    /* Thumbnail Hover Icon */
+    .ytp-inline-preview-controls, .ytp-inline-preview-scrim + .ytp-inline-preview-controls, .ytp-inline-preview-scrim + .ytp-inline-preview-controls:not(:hover) {
+        animation: none;
+        background-color: c13d;
+        animation-delay: 0s; }
+    
     /* Button */
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
         background-color: var(--yt-spec-call-to-action-hover); }
@@ -823,11 +859,11 @@ domain("studio.youtube.com") {
 
     /* Ambient Wide Screen */
     /* Thanks to: sonitaaaaa */
-        #cinematics.ytd-watch-flexy[true] {
+        /*#cinematics.ytd-watch-flexy[true] {
             width: text-ambient1;
             height: text-ambient2;
             transform: scale(1.2, 1);
-            opacity: 1; }
+            opacity: 1; }*/
 
     if checkbox-animations {
         /* Animations: Search */
