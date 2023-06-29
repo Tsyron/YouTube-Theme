@@ -56,6 +56,8 @@ domain("studio.youtube.com") {
         cf3l=rgba(cf1l, 0.5)
         cf4l=rgba(cf1l, 0.133)
         cf5l=rgba(cf1l, 0.8)
+        cf6l=rgba(cf1l, 0.4)
+        cf7l=rgba(cf1l, 0.2)
         
         gl=color-green-light
         bl=color-blue-light
@@ -87,6 +89,8 @@ domain("studio.youtube.com") {
         cf3d=rgba(cf1d, 0.5)
         cf4d=rgba(cf1d, 0.133)
         cf5d=rgba(cf1d, 0.8)
+        cf6d=rgba(cf1d, 0.4)
+        cf7d=rgba(cf1d, 0.2)
         
         gd=color-green-dark
         bd=color-blue-dark
@@ -473,6 +477,17 @@ domain("studio.youtube.com") {
         /* Video Player: Live knob */
         .ytp-live-badge[disabled]::before {
             background-color: cal; }
+            
+        /* Video Player: Progress Loaded */
+        .ytp-load-progress {
+            background-color: cf6l; }
+        
+        /* Video Player: Progress Background*/
+        .ytp-progress-list {
+            background-color: cf7l; }
+            
+        .ytp-hover-progress-light {
+            background-color: cf3d; }
 
         /* Video Player: Quality Badge */
         .ytp-settings-button.ytp-hd-quality-badge::after,
@@ -613,10 +628,6 @@ domain("studio.youtube.com") {
     
         .sbsb_i {
             color: cld; }
-            
-         .sbpqs_a:before,
-         .sbqs_c:before {
-                filter: invert(1); }
 
         /* Searchbox: Outline */
         ytd-searchbox[has-focus] #container.ytd-searchbox {
@@ -687,6 +698,17 @@ domain("studio.youtube.com") {
         /* Video Player: Live knob */
         .ytp-live-badge[disabled]::before {
             background-color: cad; }
+            
+        /* Video Player: Progress Loaded */
+        .ytp-load-progress {
+            background-color: cf6d; }  
+            
+        /* Video Player: Progress Background*/
+        .ytp-progress-list {
+            background-color: cf7d; }
+            
+        .ytp-hover-progress-light {
+            background-color: cf3d; }
 
         /* Video Player: Quality Badge */
         .ytp-settings-button.ytp-hd-quality-badge::after,
@@ -832,7 +854,7 @@ domain("studio.youtube.com") {
         
     .iv-drawer {
         background: c7d; }
-        
+
     /* Thumbnail Hover Icon */
     .ytp-inline-preview-controls, .ytp-inline-preview-scrim + .ytp-inline-preview-controls, .ytp-inline-preview-scrim + .ytp-inline-preview-controls:not(:hover) {
         animation: none;
